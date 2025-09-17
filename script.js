@@ -25,14 +25,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const visitorCount = document.getElementById('visitor-count');
   const backgroundMusic = document.getElementById('background-music');
   const hackerMusic = document.getElementById('hacker-music');
-  const rainMusic = document.getElementById('rain-music');
-  const animeMusic = document.getElementById('anime-music');
-  const carMusic = document.getElementById('car-music');
   const homeButton = document.getElementById('home-theme');
   const hackerButton = document.getElementById('hacker-theme');
-  const rainButton = document.getElementById('rain-theme');
-  const animeButton = document.getElementById('anime-theme');
-  const carButton = document.getElementById('car-theme');
   const resultsButtonContainer = document.getElementById('results-button-container');
   const resultsButton = document.getElementById('results-theme');
   const volumeIcon = document.getElementById('volume-icon');
@@ -40,13 +34,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const transparencySlider = document.getElementById('transparency-slider');
   const backgroundVideo = document.getElementById('background');
   const hackerOverlay = document.getElementById('hacker-overlay');
-  const snowOverlay = document.getElementById('snow-overlay');
   const glitchOverlay = document.querySelector('.glitch-overlay');
   const profileBlock = document.getElementById('profile-block');
   const skillsBlock = document.getElementById('skills-block');
   const pythonBar = document.getElementById('python-bar');
-  const cppBar = document.getElementById('cpp-bar');
-  const csharpBar = document.getElementById('csharp-bar');
+  const cppBar = document.getElementById('web-bar');
+  const csharpBar = document.getElementById('js-bar');
   const resultsHint = document.getElementById('results-hint');
   const profilePicture = document.querySelector('.profile-picture');
   const profileContainer = document.querySelector('.profile-container');
@@ -363,15 +356,6 @@ const bioMessages = [
       case 'hacker-theme':
         primaryColor = '#22C55E';
         break;
-      case 'rain-theme':
-        primaryColor = '#1E3A8A';
-        break;
-      case 'anime-theme':
-        primaryColor = '#DC2626';
-        break;
-      case 'car-theme':
-        primaryColor = '#EAB308';
-        break;
       default:
         primaryColor = '#00CED1';
     }
@@ -397,7 +381,6 @@ const bioMessages = [
         document.body.classList.add(themeClass);
 
         hackerOverlay.classList.add('hidden');
-        snowOverlay.classList.add('hidden');
         profileBlock.style.zIndex = overlayOverProfile ? 10 : 20;
         skillsBlock.style.zIndex = overlayOverProfile ? 10 : 20;
         if (overlay) {
@@ -445,31 +428,7 @@ const bioMessages = [
     switchTheme('assets/hacker_background.mp4', hackerMusic, 'hacker-theme', hackerOverlay, false);
   });
 
-  rainButton.addEventListener('click', () => {
-    switchTheme('assets/rain_background.mov', rainMusic, 'rain-theme', snowOverlay, true);
-  });
-  rainButton.addEventListener('touchstart', (e) => {
-    e.preventDefault();
-    switchTheme('assets/rain_background.mov', rainMusic, 'rain-theme', snowOverlay, true);
-  });
-
-  animeButton.addEventListener('click', () => {
-    switchTheme('assets/anime_background.mp4', animeMusic, 'anime-theme');
-  });
-  animeButton.addEventListener('touchstart', (e) => {
-    e.preventDefault();
-    switchTheme('assets/anime_background.mp4', animeMusic, 'anime-theme');
-  });
-
-  carButton.addEventListener('click', () => {
-    switchTheme('assets/car_background.mp4', carMusic, 'car-theme');
-  });
-  carButton.addEventListener('touchstart', (e) => {
-    e.preventDefault();
-    switchTheme('assets/car_background.mp4', carMusic, 'car-theme');
-  });
-
- 
+  
   function handleTilt(e, element) {
     const rect = element.getBoundingClientRect();
     const centerX = rect.left + rect.width / 2;
@@ -596,9 +555,9 @@ const bioMessages = [
             { x: 100, opacity: 0 },
             { x: 0, opacity: 1, duration: 0.5, ease: 'power2.out' }
           );
-          gsap.to(pythonBar, { width: '87%', duration: 2, ease: 'power2.out' });
-          gsap.to(cppBar, { width: '75%', duration: 2, ease: 'power2.out' });
-          gsap.to(csharpBar, { width: '80%', duration: 2, ease: 'power2.out' });
+          gsap.to(pythonBar, { width: '75%', duration: 2, ease: 'power2.out' });
+          gsap.to(webBar, { width: '85%', duration: 2, ease: 'power2.out' });
+          gsap.to(jsBar, { width: '45%', duration: 2, ease: 'power2.out' });
         }
       });
       resultsHint.classList.remove('hidden');
@@ -638,9 +597,9 @@ const bioMessages = [
             { x: 100, opacity: 0 },
             { x: 0, opacity: 1, duration: 0.5, ease: 'power2.out' }
           );
-          gsap.to(pythonBar, { width: '87%', duration: 2, ease: 'power2.out' });
-          gsap.to(cppBar, { width: '75%', duration: 2, ease: 'power2.out' });
-          gsap.to(csharpBar, { width: '80%', duration: 2, ease: 'power2.out' });
+          gsap.to(pythonBar, { width: '75%', duration: 2, ease: 'power2.out' });
+          gsap.to(webBar, { width: '85%', duration: 2, ease: 'power2.out' });
+          gsap.to(jsbar, { width: '45%', duration: 2, ease: 'power2.out' });
         }
       });
       resultsHint.classList.remove('hidden');
@@ -669,4 +628,5 @@ const bioMessages = [
   typeWriterStart();
 
 });
+
 
