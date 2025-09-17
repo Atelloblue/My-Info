@@ -235,10 +235,9 @@ document.addEventListener('DOMContentLoaded', () => {
   }, 500);
 
 
-  const bioMessages = [
-    "Fu*k Guns.lol & Fakecrime.bio got banned too often, so I created my own.",
-    "\"Hello, World!\""
-  ];
+const bioMessages = [
+    "\"To confuse your enemy, you must first confuse yourself\" - Sun Tzu, The Art of War"
+];
   let bioText = '';
   let bioIndex = 0;
   let bioMessageIndex = 0;
@@ -668,4 +667,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   typeWriterStart();
+
 });
