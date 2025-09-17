@@ -413,11 +413,11 @@ const bioMessages = [
 
 
   homeButton.addEventListener('click', () => {
-    switchTheme('assets/background.mp4', backgroundMusic, 'home-theme');
+    switchTheme('assets/background.png', backgroundMusic, 'home-theme');
   });
   homeButton.addEventListener('touchstart', (e) => {
     e.preventDefault();
-    switchTheme('assets/background.mp4', backgroundMusic, 'home-theme');
+    switchTheme('assets/background.png', backgroundMusic, 'home-theme');
   });
 
   hackerButton.addEventListener('click', () => {
@@ -557,7 +557,7 @@ const bioMessages = [
           );
           gsap.to(pythonBar, { width: '75%', duration: 2, ease: 'power2.out' });
           gsap.to(webBar, { width: '85%', duration: 2, ease: 'power2.out' });
-          gsap.to(jsBar, { width: '45%', duration: 2, ease: 'power2.out' });
+          g>sap.to(jsBar, { width: '45%', duration: 2, ease: 'power2.out' });
         }
       });
       resultsHint.classList.remove('hidden');
@@ -628,5 +628,6 @@ const bioMessages = [
   typeWriterStart();
 
 });
+
 
 
